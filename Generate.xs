@@ -1364,11 +1364,11 @@ GVOP_new(class, type, flags, sv)
     SV * type
     I32 flags
     SV * sv
-    CODE: 
+    CODE:
 #ifdef USE_ITHREADS
-         NEW_SVOP(newPADOP, "B::PADOP");
+         NEW_SVOP(newGVOP, "B::PADOP");
 #else
-         NEW_SVOP(newSVOP, "B::SVOP");
+         NEW_SVOP(newGVOP, "B::SVOP");
 #endif
 
 MODULE = B::Generate    PACKAGE = B::PADOP              PREFIX = PADOP_
